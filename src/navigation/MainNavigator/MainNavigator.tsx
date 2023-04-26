@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import PrivateNavigator from '../PrivateNavigator';
-import PublicNavigator from '../PublicNavigator';
+import PrivateNavigator from '@src/navigation/PrivateNavigator';
+import PublicNavigator from '@src/navigation/PublicNavigator';
 
 const MainNavigator: FC = () => {
     const isUserLoggedIn = false;

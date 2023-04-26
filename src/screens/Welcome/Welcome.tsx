@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import React, { FC } from 'react';
-import Typography from '../../components/Typography/Typography';
+import Typography from '@src/components/Typography';
 
 const Welcome: FC = () => {
     return (
