@@ -6,7 +6,7 @@ const Welcome: FC = () => {
     return (
         <View
             style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Typography>Home Screen</Typography>
+            <Typography>Welcome Screen</Typography>
         </View>
     );
 };
