@@ -1,4 +1,4 @@
-import { TextProps, TextStyle } from 'react-native';
+import { TextProps } from 'react-native';
 
 export type TypographyProps = {
     fontSize?: number;
