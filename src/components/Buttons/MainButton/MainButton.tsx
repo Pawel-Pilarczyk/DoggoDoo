@@ -14,6 +14,7 @@ const MainButton: FC<MainButtonProps> = ({
     type = 'filled',
     Icon,
     onPress,
+    ...rest
 }) => {
     const isFilled = type === 'filled';
     const isOutlined = type === 'outlined';
@@ -26,7 +27,8 @@ const MainButton: FC<MainButtonProps> = ({
                 isFilled && styles.wrapperFilled,
                 isOutlined && styles.wrapperOutlined,
                 customStyles,
-            ]}>
+            ]}
+            {...rest}>
             {Icon && (
                 <Icon
                     fill={
