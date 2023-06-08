@@ -28,7 +28,7 @@ const Loader: FC = () => {
             -1,
         );
         return () => cancelAnimation(rotation);
-    }, []);
+    }, [rotation]);
 
     return (
         <View style={styles.container}>

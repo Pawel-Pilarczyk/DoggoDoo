@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { scale } from '@src/utils/scale';
+import { MAIN_PALETTE } from '@src/constants/palette';
 
 export const styles = StyleSheet.create({
     container: {
@@ -14,6 +15,6 @@ export const styles = StyleSheet.create({
         borderTopColor: '#f5f5f5',
         borderRightColor: '#f5f5f5',
         borderBottomColor: '#f5f5f5',
-        borderLeftColor: 'green',
+        borderLeftColor: MAIN_PALETTE.primary,
     },
 });
