@@ -9,3 +9,7 @@ export const COMMON_PALETTE = {
     black: '#000',
     white: '#fff',
 };
+
+export const BORDER_PALETTE = {
+    GREY_LIGHT: '#E6DCCD',
+};

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Welcome from '../../screens/Welcome';
+import Welcome from '@src/screens/Welcome';
 
 type PrivateStackParamList = {
     Welcome: undefined;
