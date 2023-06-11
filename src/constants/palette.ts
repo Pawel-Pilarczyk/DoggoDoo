@@ -4,6 +4,7 @@ export const MAIN_PALETTE = {
     secondary: '#3F2D20',
     secondaryLight: '#73665C',
     grayLight: '#BCB3AB',
+    grey: '#BDBDBD',
 };
 export const COMMON_PALETTE = {
     black: '#000',
