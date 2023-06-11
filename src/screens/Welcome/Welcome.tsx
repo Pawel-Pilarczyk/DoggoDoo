@@ -1,21 +1,27 @@
+import React, { FC, useState } from 'react';
 import { View, Image } from 'react-native';
-import React, { FC } from 'react';
 
-import GoogleIcon from '@src/assets/svg/GoogleIcon.svg';
-import Loader from '@src/components/Loader/Loader';
-import MainButton from '@src/components/Buttons/MainButton';
-import IconButton from '@src/components/Buttons/IconButton';
+import ProgressButton from '@src/components/Buttons/ProgressButton';
 
 import { styles } from './styles';
 
+const NUMBER_OF_STEPS = 4;
+
 const Welcome: FC = () => {
+    const [progress, setProgress] = useState(1);
+
+    const handleSetNextStep = () => {
+        setProgress(v => (v === NUMBER_OF_STEPS ? NUMBER_OF_STEPS : ++v));
+    };
     return (
         <View style={styles.wrapper}>
             <Image source={require('@src/assets/logo/Logo-96.png')} />
-            <MainButton title="123" type="filled" Icon={GoogleIcon} />
-            <MainButton title="Outlined" type="outlined" Icon={GoogleIcon} />
-            <IconButton type="filled" Icon={GoogleIcon} />
-            <Loader />
+
+            <ProgressButton
+                activeStep={progress}
+                steps={NUMBER_OF_STEPS}
+                onPress={handleSetNextStep}
+            />
         </View>
     );
 };
