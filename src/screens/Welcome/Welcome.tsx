@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { View, Image } from 'react-native';
 
 import ProgressButton from '@src/components/Buttons/ProgressButton';
+import Input from '@src/components/Input';
 
 import { styles } from './styles';
 
@@ -22,6 +23,7 @@ const Welcome: FC = () => {
                 steps={NUMBER_OF_STEPS}
                 onPress={handleSetNextStep}
             />
+            <Input type="number" />
         </View>
     );
 };
