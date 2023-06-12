@@ -23,7 +23,7 @@ const Welcome: FC = () => {
                 steps={NUMBER_OF_STEPS}
                 onPress={handleSetNextStep}
             />
-            <Input type="textField" />
+            <Input type="number" />
         </View>
     );
 };

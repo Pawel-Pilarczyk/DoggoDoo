@@ -1,9 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useMemo } from 'react';
 import { TextInput, View, TouchableOpacity } from 'react-native';
 
 import EyeIcon from '@src/assets/svg/EyeIcon.svg';
 import EyeCrossedIcon from '@src/assets/svg/EyeCrossedIcon.svg';
 
+import { getKeyboardOption } from './Input.utils';
 import { InputProps } from './Input.types';
 import { styles } from './styles';
 import { scale } from '@src/utils/scale';
@@ -17,6 +18,8 @@ const Input: FC<InputProps> = ({ type, style, ...rest }) => {
 
     const numberOfLines = isTextArea ? 4 : 1;
 
+    const keyboardType = useMemo(() => getKeyboardOption(type), [type]);
+
     const handleTogglePasswordVisible = () => {
         setIsPasswordSecure(v => !v);
     };
@@ -29,6 +32,7 @@ const Input: FC<InputProps> = ({ type, style, ...rest }) => {
                 secureTextEntry={isPasswordHidden}
                 numberOfLines={numberOfLines}
                 multiline={isTextArea}
+                keyboardType={keyboardType}
             />
             {isPassword && (
                 <TouchableOpacity onPress={handleTogglePasswordVisible}>
