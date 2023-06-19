@@ -7,11 +7,12 @@ const Typography: FC<TypographyProps> = ({
     fontSize,
     fontWeight,
     color = COMMON_PALETTE.black,
+    textAlign,
     children,
     ...rest
 }) => {
     return (
-        <Text {...rest} style={{ fontSize, fontWeight, color }}>
+        <Text {...rest} style={{ fontSize, fontWeight, color, textAlign }}>
             {children}
         </Text>
     );
