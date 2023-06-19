@@ -23,7 +23,8 @@ const ProgressButton: FC<ProgressButtonProps> = ({
             fill={progressValue}
             size={scale(92)}
             width={scale(5)}
-            tintColor={MAIN_PALETTE.grey}>
+            tintColor={MAIN_PALETTE.grey}
+            rotation={0}>
             {() => (
                 <TouchableOpacity style={styles.wrapper} onPress={onPress}>
                     <ArrowRightIcon fill={COMMON_PALETTE.white} />

@@ -1,30 +1,57 @@
 import React, { FC, useState } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, ImageBackground } from 'react-native';
 
+import { scale } from '@src/utils/scale';
+
+import Typography from '@src/components/Typography';
 import ProgressButton from '@src/components/Buttons/ProgressButton';
-import Input from '@src/components/Input';
 
+import { SCREEN_DATA } from './Welcome.config';
 import { styles } from './styles';
+
+const backgroundImg = require('@src/assets/backgroundImage/bgOnboarding.png');
 
 const NUMBER_OF_STEPS = 4;
 
 const Welcome: FC = () => {
     const [progress, setProgress] = useState(1);
 
+    const { img, text, title } = SCREEN_DATA[progress - 1];
     const handleSetNextStep = () => {
         setProgress(v => (v === NUMBER_OF_STEPS ? NUMBER_OF_STEPS : ++v));
     };
-    return (
-        <View style={styles.wrapper}>
-            <Image source={require('@src/assets/logo/Logo-96.png')} />
 
-            <ProgressButton
-                activeStep={progress}
-                steps={NUMBER_OF_STEPS}
-                onPress={handleSetNextStep}
-            />
-            <Input type="number" />
-        </View>
+    return (
+        <ImageBackground source={backgroundImg} style={styles.wrapper}>
+            <View style={styles.textWrapper}>
+                <View>
+                    <Typography
+                        fontSize={scale(30)}
+                        fontWeight="600"
+                        textAlign="center">
+                        {title}
+                    </Typography>
+                    <Typography
+                        fontSize={scale(13)}
+                        fontWeight="400"
+                        textAlign="center">
+                        {text}
+                    </Typography>
+                </View>
+                <ProgressButton
+                    activeStep={progress}
+                    steps={NUMBER_OF_STEPS}
+                    onPress={handleSetNextStep}
+                />
+            </View>
+            <View
+                style={[
+                    styles.sectionWrapper,
+                    progress > 2 && styles.sectionWrapperCentered,
+                ]}>
+                <Image source={img} style={styles.img} />
+            </View>
+        </ImageBackground>
     );
 };
 
