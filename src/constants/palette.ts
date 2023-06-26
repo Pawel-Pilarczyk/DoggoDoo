@@ -9,6 +9,7 @@ export const MAIN_PALETTE = {
 export const COMMON_PALETTE = {
     black: '#000',
     white: '#fff',
+    white2: '#ffffff',
 };
 
 export const BORDER_PALETTE = {
