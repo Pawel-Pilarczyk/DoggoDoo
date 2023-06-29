@@ -2,22 +2,28 @@ import React, { FC, useState } from 'react';
 import { View, Image, ImageBackground } from 'react-native';
 
 import { scale } from '@src/utils/scale';
+import { PUBLIC_ROUTES } from '@src/constants/routes';
 
 import Typography from '@src/components/Typography';
 import ProgressButton from '@src/components/Buttons/ProgressButton';
 
 import { SCREEN_DATA } from './Welcome.config';
+import { WelcomeProps } from './Welcome.types';
 import { styles } from './styles';
 
 const backgroundImg = require('@src/assets/backgroundImage/bgOnboarding.png');
 
 const NUMBER_OF_STEPS = 4;
 
-const Welcome: FC = () => {
+const Welcome: FC<WelcomeProps> = ({ navigation }) => {
     const [progress, setProgress] = useState(1);
 
     const { img, text, title } = SCREEN_DATA[progress - 1];
+
     const handleSetNextStep = () => {
+        if (progress === NUMBER_OF_STEPS) {
+            navigation.navigate(PUBLIC_ROUTES.SIGN_UP);
+        }
         setProgress(v => (v === NUMBER_OF_STEPS ? NUMBER_OF_STEPS : ++v));
     };
 

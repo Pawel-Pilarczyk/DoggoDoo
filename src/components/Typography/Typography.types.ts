@@ -1,4 +1,4 @@
-import { TextProps, TextStyle } from 'react-native';
+import { TextProps } from 'react-native';
 
 export type TypographyProps = {
     fontSize?: number;
@@ -15,5 +15,5 @@ export type TypographyProps = {
         | '800'
         | '900';
     color?: string;
-    textAlign: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
+    textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify' | undefined;
 } & TextProps;
