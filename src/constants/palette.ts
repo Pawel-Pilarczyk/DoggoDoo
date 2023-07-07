@@ -9,9 +9,12 @@ export const MAIN_PALETTE = {
 export const COMMON_PALETTE = {
     black: '#000',
     white: '#fff',
-    white2: '#ffffff',
 };
 
 export const BORDER_PALETTE = {
     GREY_LIGHT: '#E6DCCD',
+};
+
+export const BACKGROUND_PALETTE = {
+    SEMI_TRANSPARENT_WHITE: 'rgba(255 255 255/ 0.5)',
 };

@@ -1,6 +1,6 @@
-import { BORDER_PALETTE } from '@src/constants/palette';
-import { moderateScale, scale, verticalScale } from '@src/utils/scale';
 import { StyleSheet } from 'react-native';
+import { BACKGROUND_PALETTE, BORDER_PALETTE } from '@src/constants/palette';
+import { moderateScale, scale, verticalScale } from '@src/utils/scale';
 
 export const styles = StyleSheet.create({
     wrapper: {
@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: BACKGROUND_PALETTE.SEMI_TRANSPARENT_WHITE,
     },
     textInput: {
         fontSize: scale(14),

@@ -18,3 +18,15 @@ export type SignUpProps = {
     navigation: SignUpScreenNavigationProp;
     route: SignUpScreenRouteProp;
 };
+
+export enum FieldNames {
+    EMAIL = 'email',
+    PASSWORD = 'password',
+    CONFIRM_PASSWORD = 'confirmPassword',
+}
+
+export type FieldValues = {
+    [FieldNames.EMAIL]: string;
+    [FieldNames.PASSWORD]: string;
+    [FieldNames.CONFIRM_PASSWORD]: string;
+};

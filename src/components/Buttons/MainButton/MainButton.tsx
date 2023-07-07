@@ -38,6 +38,7 @@ const MainButton: FC<MainButtonProps> = ({
             )}
             <Typography
                 fontSize={14}
+                fontWeight="600"
                 color={isFilled ? COMMON_PALETTE.white : COMMON_PALETTE.black}>
                 {title}
             </Typography>

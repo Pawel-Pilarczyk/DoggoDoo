@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { moderateScale } from '@src/utils/scale';
+import { moderateScale, verticalScale } from '@src/utils/scale';
 
 export const styles = StyleSheet.create({
     background: {
@@ -10,5 +10,14 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: moderateScale(33),
+        gap: verticalScale(30),
+    },
+    signUpText: {
+        marginVertical: verticalScale(40),
+    },
+    signInTextWrapper: {
+        flexDirection: 'row',
+        gap: moderateScale(8),
+        marginTop: verticalScale(40),
     },
 });
